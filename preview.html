@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AxleHost | Premium Game Hosting</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#05060A",
+                        foreground: "#FFFFFF",
+                        card: "rgba(255, 255, 255, 0.03)",
+                        primary: { DEFAULT: "#3B82F6", glow: "rgba(59, 130, 246, 0.5)" },
+                        secondary: { DEFAULT: "#A855F7", glow: "rgba(168, 85, 247, 0.5)" },
+                    },
+                    backgroundImage: {
+                        'hero-glow': 'radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 70%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #05060A; color: white; margin: 0; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; }
+        .text-gradient-blue { background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-primary { padding: 12px 32px; background: #3B82F6; border-radius: 9999px; font-weight: 600; transition: all 0.3s; box-shadow: 0 0 20px rgba(59,130,246,0.2); }
+        .btn-primary:hover { background: #2563EB; box-shadow: 0 0 25px rgba(59,130,246,0.4); transform: translateY(-2px); }
+        .nav-scrolled { background: rgba(5, 6, 10, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Background Glows -->
+    <div class="fixed top-0 left-1/4 w-[50vw] h-[50vh] bg-primary/10 blur-[120px] rounded-full z-[-1]"></div>
+    <div class="fixed bottom-0 right-1/4 w-[50vw] h-[50vh] bg-secondary/10 blur-[120px] rounded-full z-[-1]"></div>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6 px-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-gradient-to-tr from-primary to-secondary rounded-xl flex items-center justify-center font-bold shadow-[0_0_15px_rgba(59,130,246,0.5)]">A</div>
+                <span class="text-2xl font-bold tracking-tight">Axle<span class="text-primary">Host</span></span>
+            </div>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-medium">
+                <a href="#home" class="hover:text-primary transition-colors">Home</a>
+                <a href="#plans" class="hover:text-primary transition-colors">Plans</a>
+                <a href="#features" class="hover:text-primary transition-colors">Features</a>
+                <a href="#dashboard" class="hover:text-primary transition-colors text-secondary font-bold">Dashboard Preview</a>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="#" class="text-sm font-semibold hover:text-primary">Login</a>
+                <a href="#plans" class="btn-primary text-sm">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-48 pb-32 container mx-auto px-10 text-center">
+        <span class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold tracking-widest uppercase mb-8">
+            <i data-lucide="zap" class="w-3 h-3 mr-2"></i>
+            Reliable Performance 99.9% Uptime Guaranteed
+        </span>
+        <h1 class="text-6xl md:text-8xl font-extrabold mb-10 max-w-6xl mx-auto leading-tight transition-all duration-500 opacity-0 transform translate-y-10" id="hero-title">
+            Power Your Servers with <br />
+            <span class="text-gradient-blue">Zero Lag</span>
+        </h1>
+        <p class="text-xl text-gray-400 mb-14 max-w-3xl mx-auto opacity-0 transition-all duration-700 delay-200" id="hero-subtitle">
+            Experience lightning-fast game hosting on our global NVMe edge network. 
+            Built for enthusiasts who demand excellence.
+        </p>
+        <div class="flex justify-center space-x-6 opacity-0 transition-all duration-1000 delay-500" id="hero-cta">
+            <a href="#plans" class="btn-primary flex items-center space-x-2">
+                <span>Start Playing</span>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+            <a href="#" class="px-8 py-3 bg-white/5 border border-white/10 rounded-full font-semibold hover:bg-white/10 transition-all">View Demo</a>
+        </div>
+
+        <!-- Mockup Panel -->
+        <div class="mt-32 max-w-6xl mx-auto glass-card p-1 border-white/5 overflow-hidden animate-float">
+            <div class="bg-[#0A0B10] rounded-[19px] p-10 text-left font-mono text-sm border border-white/5">
+                <div class="flex items-center space-x-3 mb-8 border-b border-white/5 pb-6">
+                    <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                    <span class="ml-4 text-gray-500">axlehost-manager@internal-srv: /root # setup --game=minecraft</span>
+                </div>
+                <div class="space-y-3 flex-grow h-64 overflow-hidden">
+                    <p class="text-green-400">-> [LOAD] Booting AxleHost Engine v4.2.1-premium</p>
+                    <p class="text-gray-400">-> [INFO] Initializing Intel Core i9 Gen 13 Node (6.0GHz Burst)</p>
+                    <p class="text-gray-400">-> [INFO] Connection to NVMe SAN Established (8.2 GB/s Transmit)</p>
+                    <p class="text-primary">-> [SEC] DDoS Shield v12 Operational - Mitigation ACTIVE</p>
+                    <p class="text-gray-400">-> [INFO] Allocated 12GB DDR5 @ 6400MHz</p>
+                    <p class="text-yellow-400">-> [WARN] High demand in US-EAST Node. Scaling instances...</p>
+                    <p class="text-green-500">-> [OK] Server instance ready in 1.25s. Port: 25565</p>
+                    <p class="animate-pulse">_</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / Plans -->
+    <section id="plans" class="py-32 container mx-auto px-10">
+        <div class="text-center mb-24">
+            <h2 class="text-5xl font-bold mb-6">Choose Your <span class="text-primary">Power</span></h2>
+            <div class="w-24 h-1.5 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Basic -->
+            <div class="glass-card p-10 hover:border-primary/50 transition-all duration-500 group">
+                <h3 class="text-2xl font-bold mb-4">Basic</h3>
+                <p class="text-gray-500 text-sm mb-10 h-10">For small communities and group play.</p>
+                <div class="mb-10 flex items-baseline">
+                    <span class="text-5xl font-extrabold">$5.99</span>
+                    <span class="text-gray-600 ml-2">/mo</span>
+                </div>
+                <ul class="space-y-4 mb-12">
+                    <li class="flex items-center space-x-3 text-sm text-gray-400"><i data-lucide="cpu" class="w-4 h-4 text-primary"></i> <span>4GB High Speed RAM</span></li>
+                    <li class="flex items-center space-x-3 text-sm text-gray-400"><i data-lucide="zap" class="w-4 h-4 text-primary"></i> <span>2 Dedicated vCores</span></li>
+                    <li class="flex items-center space-x-3 text-sm text-gray-400"><i data-lucide="shield" class="w-4 h-4 text-primary"></i> <span>Standard DDoS Protection</span></li>
+                </ul>
+                <a href="#" class="block text-center py-4 rounded-xl border border-white/10 hover:bg-white/5 font-bold transition-all">Select Plan</a>
+            </div>
+            <!-- Pro -->
+            <div class="glass-card p-10 border-primary/40 ring-1 ring-primary/20 scale-105 bg-gradient-to-b from-primary/10 to-transparent relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-primary px-6 py-1 text-[10px] font-bold tracking-widest rounded-bl-xl">POPULAR</div>
+                <h3 class="text-2xl font-bold mb-4">Professional</h3>
+                <p class="text-gray-500 text-sm mb-10 h-10">Advanced hardware for modded networks.</p>
+                <div class="mb-10 flex items-baseline text-white">
+                    <span class="text-5xl font-extrabold">$14.99</span>
+                    <span class="text-gray-400 ml-2">/mo</span>
+                </div>
+                <ul class="space-y-4 mb-12">
+                    <li class="flex items-center space-x-3 text-sm"><i data-lucide="cpu" class="w-4 h-4 text-primary"></i> <span>12GB DDR5 Memory</span></li>
+                    <li class="flex items-center space-x-3 text-sm"><i data-lucide="zap" class="w-4 h-4 text-primary"></i> <span>4x Core (6.0GHz Peak)</span></li>
+                    <li class="flex items-center space-x-3 text-sm"><i data-lucide="shield" class="w-4 h-4 text-primary"></i> <span>Enterprise-Grade Security</span></li>
+                    <li class="flex items-center space-x-3 text-sm"><i data-lucide="database" class="w-4 h-4 text-primary"></i> <span>Daily Remote Backups</span></li>
+                </ul>
+                <a href="#" class="block text-center py-4 rounded-xl bg-primary hover:bg-blue-600 font-bold shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all">Order Now</a>
+            </div>
+            <!-- Ultimate -->
+            <div class="glass-card p-10 hover:border-secondary/50 transition-all duration-500">
+                <h3 class="text-2xl font-bold mb-4">Ultimate</h3>
+                <p class="text-gray-500 text-sm mb-10 h-10">Maximum performance for large networks.</p>
+                <div class="mb-10 flex items-baseline">
+                    <span class="text-5xl font-extrabold">$29.99</span>
+                    <span class="text-gray-600 ml-2">/mo</span>
+                </div>
+                <ul class="space-y-4 mb-12">
+                    <li class="flex items-center space-x-3 text-sm text-gray-400"><i data-lucide="cpu" class="w-4 h-4 text-secondary"></i> <span>32GB Enterprise RAM</span></li>
+                    <li class="flex items-center space-x-3 text-sm text-gray-400"><i data-lucide="zap" class="w-4 h-4 text-secondary"></i> <span>8 Dedicated Core (Xeon)</span></li>
+                    <li class="flex items-center space-x-3 text-sm text-gray-400"><i data-lucide="shield" class="w-4 h-4 text-secondary"></i> <span>VIP Direct DDoS Support</span></li>
+                </ul>
+                <a href="#" class="block text-center py-4 rounded-xl border border-white/10 hover:bg-white/5 font-bold transition-all">Select Plan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/5 bg-[#05060A]">
+        <div class="container mx-auto px-10 text-center">
+            <div class="flex justify-center items-center space-x-3 mb-10">
+                <div class="w-8 h-8 bg-gradient-to-tr from-primary to-secondary rounded-lg flex items-center justify-center font-bold">A</div>
+                <span class="text-xl font-bold">AxleHost</span>
+            </div>
+            <p class="text-gray-600 text-sm max-w-lg mx-auto leading-relaxed">
+                Premium game hosting built for players who don't compromise. 
+                Experience the zero-lag difference today.
+            </p>
+            <div class="mt-12 text-[10px] text-gray-700 font-bold uppercase tracking-[4px]">
+                &copy; 2026 AxleHost Global Inc.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Start Lucide Icons
+        lucide.createIcons();
+
+        // Reveal animations
+        window.addEventListener('scroll', function() {
+            const nav = id('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled', 'py-4');
+                nav.classList.remove('py-6');
+            } else {
+                nav.classList.remove('nav-scrolled', 'py-4');
+                nav.classList.add('py-6');
+            }
+        });
+
+        function id(e) { return document.getElementById(e); }
+
+        // Start reveal
+        window.onload = function() {
+            id('hero-title').style.opacity = '1';
+            id('hero-title').style.transform = 'translateY(0)';
+            
+            setTimeout(() => {
+                id('hero-subtitle').style.opacity = '1';
+                id('hero-subtitle').style.transform = 'translateY(0)';
+            }, 300);
+
+            setTimeout(() => {
+                id('hero-cta').style.opacity = '1';
+                id('hero-cta').style.transform = 'translateY(0)';
+            }, 600);
+        }
+    </script>
+</body>
+</html>
